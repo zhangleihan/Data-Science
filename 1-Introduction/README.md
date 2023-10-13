@@ -2,8 +2,9 @@
 
 ![data in action](images/data.jpg)
 > Photo by <a href="https://unsplash.com/@dawson2406?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Stephen Dawson</a> on <a href="https://unsplash.com/s/photos/data?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
-In these lessons, you will discover how Data Science is defined and learn about ethical considerations that must be considered by a data scientist. You will also learn how data is defined and learn a bit about statistics and probability, the core academic domains of Data Science.
+
+在这些课程中，您将了解如何定义数据科学，并了解数据科学家必须考虑的道德因素。您还将了解如何定义数据，并了解一些关于数据科学核心学术领域的统计和概率知识。  
+<!-- In these lessons, you will discover how Data Science is defined and learn about ethical considerations that must be considered by a data scientist. You will also learn how data is defined and learn a bit about statistics and probability, the core academic domains of Data Science. -->
 
 ### Topics
 

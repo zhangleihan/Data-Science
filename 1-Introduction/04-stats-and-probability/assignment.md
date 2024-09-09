@@ -1,4 +1,4 @@
-# Small Diabetes Study
+# 小型糖尿病数据集研究
 
 <!-- In this assignment, we will work with a small dataset of diabetes patients taken from [here](https://www4.stat.ncsu.edu/~boos/var.select/diabetes.html). -->
 在本次作业中，我们将使用从[此处](https://www4.stat.ncsu.edu/~boos/var.select/diabetes.html)获取的糖尿病患者的小型数据集。
@@ -10,7 +10,7 @@
 | 2 | 72 | 2 | 30.5 | 93.0 | 156 | 93.6 | 41.0 | 4.0 | 4. | 85 | 141 |
 | ... | ... | ... | ... | ...| ...| ...| ...| ...| ...| ...| ... |
 
-## Instructions
+## 关键任务
 
 <!-- * Open the [assignment notebook](assignment.ipynb) in a jupyter notebook environment -->
 在jupyter [notebook](assignment.ipynb)环境中打开作业笔记本
@@ -29,7 +29,7 @@
    * [ ] Test the correlation between different variables and disease progression (Y)
    * [ ] Test the hypothesis that the degree of diabetes progression is different between men and women -->
    
-## Rubric
+## 评价标准
 
 Exemplary | Adequate | Needs Improvement
 --- | --- | -- |

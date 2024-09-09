@@ -1,8 +1,8 @@
-# A Brief Introduction to Statistics and Probability
+# 概率统计
 
 |![ Sketchnote by [(@sketchthedocs)](https://sketchthedocs.dev) ](../../sketchnotes/04-Statistics-Probability.png)|
 |:---:|
-| Statistics and Probability - _Sketchnote by [@nitya](https://twitter.com/nitya)_ |
+<!-- | Statistics and Probability - _Sketchnote by [@nitya](https://twitter.com/nitya)_ | -->
 
 统计和概率论是与数据科学高度相关的两个高度相关的数学领域。即使没有深厚的数学知识也可以对数据进行操作，但至少了解一些基本概念仍然更好。在这里，我们将提供一个简短的介绍，以帮助您入门。
 <!-- Statistics and Probability Theory are two highly related areas of Mathematics that are highly relevant to Data Science. It is possible to operate with data without deep knowledge of mathematics, but it is still better to know at least some basic concepts. Here we will present a short introduction that will help you get started. -->
@@ -10,9 +10,10 @@
 [![Intro Video](images/video-prob-and-stats.png)](https://youtu.be/Z5Zy85g4Yjw)
 
 
-## [Pre-lecture quiz](https://purple-hill-04aebfb03.1.azurestaticapps.net/quiz/6)
+<!-- ## [Pre-lecture quiz](https://purple-hill-04aebfb03.1.azurestaticapps.net/quiz/6) -->
 
-## Probability and Random Variables
+<!-- ## Probability and Random Variables -->
+## 概率与随机变量
 
 概率是 0 到 1 之间的数字，表示事件发生的可能性有多大。它被定义为积极结果（导致事件）的数量除以结果总数，前提是所有结果的可能性相同。例如，当我们掷骰子时，得到偶数的概率是 3/6 = 0.5。
 
@@ -27,7 +28,8 @@ When we talk about events, we use **random variables**. For example, the random 
 
 The random variable in previous example is called **discrete**, because it has a countable sample space, i.e. there are separate values that can be enumerated. There are cases when sample space is a range of real numbers, or the whole set of real numbers. Such variables are called **continuous**. A good example is the time when the bus arrives. -->
 
-## Probability Distribution
+<!-- ## Probability Distribution -->
+## 概率分布
 
 在离散随机变量的情况下，很容易用函数 P(X) 来描述每个事件的概率。对于样本空间S中的每个值s，它将给出一个从 0 到 1 的数字，这样所有事件的 P(X=s) 的所有值的总和将为 1。
 
@@ -59,7 +61,8 @@ Another important distribution is **normal distribution**, which we will talk ab
 
 另一个重要的分布是正态分布，我们将在下面更详细地讨论它。
 
-## Mean, Variance and Standard Deviation
+<!-- ## Mean, Variance and Standard Deviation -->
+## 均值、方差与标准差
 
 <!-- Suppose we draw a sequence of n samples of a random variable X: x<sub>1</sub>, x<sub>2</sub>, ..., x<sub>n</sub>. We can define **mean** (or **arithmetic average**) value of the sequence in the traditional way as (x<sub>1</sub>+x<sub>2</sub>+x<sub>n</sub>)/n. As we grow the size of the sample (i.e. take the limit with n&rarr;&infin;), we will obtain the mean (also called **expectation**) of the distribution. We will denote expectation by **E**(x). -->
 
@@ -73,7 +76,9 @@ Another important distribution is **normal distribution**, which we will talk ab
 
 为了确定值的分布范围，我们可以计算方差 &sigma;<sup>2</sup> = &sum;(x<sub>i</sub> - &mu;)<sup>2</sup>/n，其中&mu;是序列的平均值。值 &sigma; 称为标准差，&sigma;<sup>2</sup>称为方差。
 
-## Mode, Median and Quartiles
+<!-- ## Mode, Median and Quartiles -->
+
+## 众数、中位数及分位数
 
 <!-- Sometimes, mean does not adequately represent the "typical" value for data. For example, when there are a few extreme values that are completely out of range, they can affect the mean. Another good indication is a **median**, a value such that half of data points are lower than it, and another half - higher.
 
@@ -92,7 +97,9 @@ Graphically we can represent relationship between median and quartiles in a diag
 * 第三四分位数或 Q3 是 75% 的数据低于该值的值
 我们可以用图形方式表示中位数和四分位数之间的关系，称为箱线图：
 
-<img src="images/boxplot_explanation.png" width="50%"/>
+<!-- <img src="images/boxplot_explanation.png" width="50%"/> -->
+
+![boxplot_explanation](images/boxplot_explanation.png)
 
 <!-- Here we also compute **inter-quartile range** IQR=Q3-Q1, and so-called **outliers** - values, that lie outside the boundaries [Q1-1.5*IQR,Q3+1.5*IQR]. -->
 
@@ -104,7 +111,9 @@ Graphically we can represent relationship between median and quartiles in a diag
 
 对于包含少量可能值的有限分布，一个好的“典型”值是出现最频繁的值，称为众数。它通常应用于分类数据，例如颜色。考虑这样一种情况：我们有两组人 - 一些人非常喜欢红色，另一些人则喜欢蓝色。如果我们用数字对颜色进行编码，那么最喜欢的颜色的平均值将位于橙绿色光谱中的某个位置，这并不表明对这两个组的实际偏好。但是，如果投票给它们的人数相等，则模式可以是其中一种颜色，也可以是两种颜色（在这种情况下，我们将样本称为 multimodal ）。
 
-## Real-world Data
+<!-- ## Real-world Data -->
+
+## 真实数据
 
 <!-- When we analyze data from real life, they often are not random variables as such, in a sense that we do not perform experiments with unknown result. For example, consider a team of baseball players, and their body data, such as height, weight and age. Those numbers are not exactly random, but we can still apply the same mathematical concepts. For example, a sequence of people's weights can be considered to be a sequence of values drawn from some random variable. Below is the sequence of weights of actual baseball players from [Major League Baseball](http://mlb.mlb.com/index.jsp), taken from [this dataset](http://wiki.stat.ucla.edu/socr/index.php/SOCR_Data_MLB_HeightsWeights) (for your convenience, only first 20 values are shown): -->
 
@@ -145,7 +154,8 @@ Graphically we can represent relationship between median and quartiles in a diag
 <!-- > If we take weights of other people, not from the baseball league, the distribution is likely to be different. However, the shape of the distribution will be the same, but mean and variance would change. So, if we train our model on baseball players, it is likely to give wrong results when applied to students of a university, because the underlying distribution is different. -->
 >如果我们采用其他人的权重，而不是棒球联盟的权重，那么分布可能会有所不同。然而，分布的形状将是相同的，但均值和方差会改变。因此，如果我们在棒球运动员上训练我们的模型，当应用于大学学生时，很可能会给出错误的结果，因为潜在的分布是不同的。
 
-## Normal Distribution
+<!-- ## Normal Distribution -->
+# 正态分布
 
 <!-- The distribution of weights that we have seen above is very typical, and many measurements from real world follow the same type of distribution, but with different mean and variance. This distribution is called **normal distribution**, and it plays a very important role in statistics. -->
 我们在上面看到的权重分布非常典型，现实世界中的许多测量都遵循相同类型的分布，但具有不同的均值和方差。这种分布称为正态分布，它在统计学中起着非常重要的作用。
@@ -164,7 +174,8 @@ samples = np.random.normal(mean,std,1000)
 
 *Normal Distribution with mean=0 and std.dev=1*
 
-## Confidence Intervals
+<!-- ## Confidence Intervals -->
+## 置信区间
 
 <!-- When we talk about weights of baseball players, we assume that there is certain **random variable W** that corresponds to ideal probability distribution of weights of all baseball players (so-called **population**). Our sequence of weights corresponds to a subset of all baseball players that we call **sample**. An interesting question is, can we know the parameters of distribution of W, i.e. mean and variance of the population? -->
 当我们谈论棒球运动员的体重时，我们假设存在某个随机变量 W对应于所有棒球运动员（所谓的总体）体重的理想概率分布。我们的权重序列对应于我们称为样本的所有棒球运动员的子集。一个有趣的问题是，我们能否知道W的分布参数，即总体的均值和方差？
@@ -181,7 +192,8 @@ samples = np.random.normal(mean,std,1000)
 
 
 <!-- It does beyond our short intro to discuss in detail how those confidence intervals are calculated. Some more details can be found [on Wikipedia](https://en.wikipedia.org/wiki/Confidence_interval). In short, we define the distribution of computed sample mean relative to the true mean of the population, which is called **student distribution**. -->
-它超出了我们简短的介绍，详细讨论了如何计算这些置信区间。更多详细信息可以在[维基百科](https://en.wikipedia.org/wiki/Confidence_interval)上找到。简而言之，我们定义计算样本均值相对于总体真实均值的分布，称为学生分布。
+
+更多详细信息可以在[维基百科](https://en.wikipedia.org/wiki/Confidence_interval)上找到。简而言之，我们定义计算样本均值相对于总体真实均值的分布，称为学生分布。
 
 
 <!-- > **Interesting fact**: Student distribution is named after mathematician William Sealy Gosset, who published his paper under the pseudonym "Student". He worked in the Guinness brewery, and, according to one of the versions, his employer did not want general public to know that they were using statistical tests to determine the quality of raw materials. -->
@@ -206,7 +218,8 @@ samples = np.random.normal(mean,std,1000)
 <!-- Notice that the higher is the confidence probability, the wider is the confidence interval.  -->
 请注意，置信概率越高，置信区间越宽。
 
-## Hypothesis Testing 
+<!-- ## Hypothesis Testing  -->
+## 假设检验
 
 <!-- In our baseball players dataset, there are different player roles, that can be summarized below (look at the [accompanying notebook](notebook.ipynb) to see how this table can be calculated): -->
 在我们的棒球运动员数据集中，有不同的球员角色，可以总结如下（查看随附的[notebook](notebook.ipynb)以了解如何计算此表）：
@@ -227,15 +240,15 @@ samples = np.random.normal(mean,std,1000)
 
 | 角色 | 身高 | 体重 | 人数 |
 |------|--------|--------|-------|
-| Catcher | 72.723684 | 204.328947 | 76 |
-| Designated_Hitter | 74.222222 | 220.888889 | 18 |
-| First_Baseman | 74.000000 | 213.109091 | 55 |
-| Outfielder | 73.010309 | 199.113402 | 194 |
-| Relief_Pitcher | 74.374603 | 203.517460 | 315 |
-| Second_Baseman | 71.362069 | 184.344828 | 58 |
-| Shortstop | 71.903846 | 182.923077 | 52 |
-| Starting_Pitcher | 74.719457 | 205.163636 | 221 |
-| Third_Baseman | 73.044444 | 200.955556 | 45 |
+| Catcher（接球手） | 72.723684 | 204.328947 | 76 |
+| Designated_Hitter（指定击球员） | 74.222222 | 220.888889 | 18 |
+| First_Basema（一垒手） | 74.000000 | 213.109091 | 55 |
+| Outfielder（外场手） | 73.010309 | 199.113402 | 194 |
+| Relief_Pitcher（替补投手） | 74.374603 | 203.517460 | 315 |
+| Second_Baseman（二垒手） | 71.362069 | 184.344828 | 58 |
+| Shortstop（游击手） | 71.903846 | 182.923077 | 52 |
+| Starting_Pitcher（先发投手） | 74.719457 | 205.163636 | 221 |
+| Third_Baseman（三垒手） | 73.044444 | 200.955556 | 45 |
 
 
 <!-- We can notice that the mean heights of first basemen is higher than that of second basemen. Thus, we may be tempted to conclude that **first basemen are higher than second basemen**. -->
@@ -259,7 +272,8 @@ samples = np.random.normal(mean,std,1000)
 <!-- We can see that under no confidence the intervals overlap. That proves our hypothesis that first basemen are higher than second basemen. -->
 我们可以看到，在没有置信度的情况下，区间重叠。这证明了我们的假设，即一垒手高于二垒手。
 
-More formally, the problem we are solving is to see if **two probability distributions are the same**, or at least have the same parameters. Depending on the distribution, we need to use different tests for that. If we know that our distributions are normal, we can apply **[Student t-test](https://en.wikipedia.org/wiki/Student%27s_t-test)**. 
+<!-- More formally, the problem we are solving is to see if **two probability distributions are the same**, or at least have the same parameters. Depending on the distribution, we need to use different tests for that. If we know that our distributions are normal, we can apply **[Student t-test](https://en.wikipedia.org/wiki/Student%27s_t-test)**.  -->
+
 更正式地说，我们要解决的问题是查看两个概率分布是否相同，或者至少具有相同的参数。根据发行版的不同，我们需要使用不同的测试。如果我们知道我们的分布是正态的，我们可以应用[学生t检验](https://en.wikipedia.org/wiki/Student%27s_t-test)。
 
 <!-- In Student t-test, we compute so-called **t-value**, which indicates the difference between means, taking into account the variance. It is demonstrated that t-value follows **student distribution**, which allows us to get the threshold value for a given confidence level **p** (this can be computed, or looked up in the numerical tables). We then compare t-value to this threshold to approve or reject the hypothesis. -->
@@ -298,20 +312,21 @@ P-value: 9.137321189738925e-12
 <!-- * To compare means of a number of samples (eg. what is the difference in happiness levels among different age groups) -->
 * 比较多个样本的平均值（例如，不同年龄组的幸福水平有何差异）
 
-## Law of Large Numbers and Central Limit Theorem
-
+<!-- ## Law of Large Numbers and Central Limit Theorem -->
+## 大数定律和中心极限定律
 <!-- One of the reasons why normal distribution is so important is so-called **central limit theorem**. Suppose we have a large sample of independent N values X<sub>1</sub>, ..., X<sub>N</sub>, sampled from any distribution with mean &mu; and variance &sigma;<sup>2</sup>. Then, for sufficiently large N (in other words, when N&rarr;&infin;), the mean &Sigma;<sub>i</sub>X<sub>i</sub> would be normally distributed, with mean &mu; and variance &sigma;<sup>2</sup>/N. -->
 正态分布如此重要的原因之一是所谓的中心极限定理。假设我们有一个独立的 N 个值X<sub>1</sub>, ..., X<sub>N</sub>的大样本，从具有均值 μ 和方差 &sigma;<sup>2</sup>的任何分布中采样。那么，对于足够大的 N（换句话说，当 N&rarr;&infin;时），均值 &Sigma;<sub>i</sub>X<sub>i</sub>将呈正态分布，均值 μ 和方差 &sigma;<sup>2</sup>/N。
 
 
 <!-- > Another way to interpret the central limit theorem is to say that regardless of distribution, when you compute the mean of a sum of any random variable values you end up with normal distribution.  -->
-> 解释中心极限定理的另一种方法是，无论分布如何，当您计算任何随机变量值之和的平均值时，您最终都会得到正态分布。
+> 解释中心极限定理的另一种方法是，无论分布如何，当计算任何随机变量值之和的平均值时，最终都会得到正态分布。
 
 
 <!-- From the central limit theorem it also follows that, when N&rarr;&infin;, the probability of the sample mean to be equal to &mu; becomes 1. This is known as **the law of large numbers**. -->
-由中心极限定理还可以得出，当N&rarr;&infin;时，样本均值等于μ的概率变为1。这就是大数定律。
+由中心极限定理还可以得出，当N&rarr;&infin;时，样本均值等于μ的概率变为1，这就是大数定律。
 
-## Covariance and Correlation
+<!-- ## Covariance and Correlation -->
+## 协方差与相关系数
 
 <!-- One of the things Data Science does is finding relations between data. We say that two sequences **correlate** when they exhibit the similar behavior at the same time, i.e. they either rise/fall simultaneously, or one sequence rises when another one falls and vice versa. In other words, there seems to be some relation between two sequences. -->
 数据科学所做的事情之一就是寻找数据之间的关系。当两个序列同时表现出相似的行为时，我们说它们相关，即它们同时上升/下降，或者一个序列在另一个序列下降时上升，反之亦然。换句话说，两个序列之间似乎存在某种关系。
@@ -355,7 +370,8 @@ array([[1.        , 0.52959196],
 更多相关性和协方差的例子可以在随附的[notebook](notebook.ipynb)中找到。
 
 
-## Conclusion
+<!-- ## Conclusion -->
+## 总结
 
 <!-- In this section, we have learnt: -->
 在本节中，我们学习了：
@@ -389,7 +405,7 @@ array([[1.        , 0.52959196],
 2. 一垒手比三垒手高
 3. 游击手比二垒手高
 
-## [Post-lecture quiz](https://purple-hill-04aebfb03.1.azurestaticapps.net/quiz/7)
+<!-- ## [Post-lecture quiz](https://purple-hill-04aebfb03.1.azurestaticapps.net/quiz/7) -->
 
 ## Review & Self Study
 
@@ -403,8 +419,8 @@ array([[1.        , 0.52959196],
 ## Assignment
 
 <!-- [Small Diabetes Study](assignment.md) -->
-[小型糖尿病研究](assignment.md)
+[小型糖尿病数据集研究](assignment.md)
 
-## Credits
+<!-- ## Credits
 
-This lesson has been authored with ♥️ by [Dmitry Soshnikov](http://soshnikov.com)
+This lesson has been authored with ♥️ by [Dmitry Soshnikov](http://soshnikov.com) -->

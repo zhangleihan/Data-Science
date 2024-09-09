@@ -1,14 +1,17 @@
-# Displaying airport data
+<!-- # Displaying airport data -->
+# 展示飞机场数据
 
 <!-- You have been provided a [database](https://raw.githubusercontent.com/Microsoft/Data-Science-For-Beginners/main/2-Working-With-Data/05-relational-databases/airports.db) built on [SQLite](https://sqlite.org/index.html) which contains information about airports. The schema is displayed below. You will use the [SQLite extension](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite&WT.mc_id=academic-77958-bethanycheum) in [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=academic-77958-bethanycheum) to display information about different cities' airports. -->
 我们为您提供了一个基于[SQLite](https://sqlite.org/index.html)构建的[数据库](https://raw.githubusercontent.com/Microsoft/Data-Science-For-Beginners/main/2-Working-With-Data/05-relational-databases/airports.db)，其中包含有关机场的信息。该架构如下所示。您将使用Visual Studio Code中的[SQLite 扩展](https://code.visualstudio.com?WT.mc_id=academic-77958-bethanycheum)来显示有关不同城市机场的信息。
 
-## Instructions
+<!-- ## Instructions -->
+## 环境配置
 
 <!-- To get started with the assignment, you'll need to perform a couple of steps. You'll need to install a bit of tooling and download the sample database. -->
 要开始分配，您需要执行几个步骤。您需要安装一些工具并下载示例数据库。
 
-### Setup your system
+<!-- ### Setup your system -->
+### 系统设置
 
 <!-- You can use Visual Studio Code and the SQLite extension to interact with the database. -->
 您可以使用 Visual Studio Code 和 SQLite 扩展与数据库进行交互。
@@ -18,7 +21,8 @@
 <!-- 2. Install the [SQLite extension](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite&WT.mc_id=academic-77958-bethanycheum) extension as instructed on the Marketplace page -->
 2.按照 Marketplace 页面上的说明安装[SQLite 扩展](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite&WT.mc_id=academic-77958-bethanycheum)插件
 
-### Download and open the database
+<!-- ### Download and open the database -->
+### 数据库下载
 
 <!-- Next you will download an open the database. -->
 接下来您将下载一个打开的数据库。
@@ -36,7 +40,8 @@
 
 > [!NOTE] 有关 SQLite 扩展的更多信息，可以查阅[文档](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite&WT.mc_id=academic-77958-bethanycheum)
 
-## Database schema
+<!-- ## Database schema -->
+## 数据库结构
 
 <!-- A database's schema is its table design and structure. The **airports** database as two tables, `cities`, which contains a list of cities in the United Kingdom and Ireland, and `airports`, which contains the list of all airports. Because some cities may have multiple airports, two tables were created to store the information. In this exercise you will use joins to display information for different cities. -->
 
@@ -55,7 +60,8 @@
 | code (text)                      |
 | city_id (FK to id in **Cities**) |
 
-## Assignment
+<!-- ## Assignment -->
+## 任务
 
 <!-- Create queries to return the following information: -->
 创建查询以返回以下信息：
@@ -68,8 +74,3 @@
 1. all cities in Ireland in the `Cities` table
 1. all airport names with their city and country
 1. all airports in London, United Kingdom -->
-
-## Rubric
-
-| Exemplary | Adequate | Needs Improvement |
-| --------- | -------- | ----------------- |

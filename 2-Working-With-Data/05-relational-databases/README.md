@@ -1,68 +1,72 @@
-# Working with Data: Relational Databases
+<!-- # Working with Data: Relational Databases -->
+# 处理关系型数据
 
 |![ Sketchnote by [(@sketchthedocs)](https://sketchthedocs.dev) ](../../sketchnotes/05-RelationalData.png)|
 |:---:|
 | Working With Data: Relational Databases - _Sketchnote by [@nitya](https://twitter.com/nitya)_ |
 
 <!-- Chances are you have used a spreadsheet in the past to store information. You had a set of rows and columns, where the rows contained the information (or data), and the columns described the information (sometimes called metadata). A relational database is built upon this core principle of columns and rows in tables, allowing you to have information spread across multiple tables. This allows you to work with more complex data, avoid duplication, and have flexibility in the way you explore the data. Let's explore the concepts of a relational database. -->
-您过去很可能使用电子表格来存储信息。您有一组行和列，其中行包含信息（或数据），列描述信息（有时称为元数据）。关系数据库是基于表中的列和行的核心原则构建的，允许您将信息分布在多个表中。这使您可以处理更复杂的数据，避免重复，并灵活地探索数据。让我们探讨一下关系数据库的概念。
+在工作和学习中，使用电子表格来存储信息是普遍存在的。电子表格通常由一组行和列构成，其中行包含信息（或数据），列描述信息（有时称为元数据）。关系数据库是基于表中的列和行的核心原则构建的，允许将信息分布在多个表中。使用这些数据表，可以处理更复杂的数据，避免重复，并灵活地探索数据。
 
-## [Pre-lecture quiz](https://purple-hill-04aebfb03.1.azurestaticapps.net/quiz/8)
+<!-- ## [Pre-lecture quiz](https://purple-hill-04aebfb03.1.azurestaticapps.net/quiz/8) -->
 
-## It all starts with tables
+<!-- ## It all starts with tables -->
+## 表格
 
 <!-- A relational database has at its core tables. Just as with the spreadsheet, a table is a collection of columns and rows. The row contains the data or information we wish to work with, such as the name of a city or the amount of rainfall. The columns describe the data they store. -->
 关系数据库的核心是表。就像电子表格一样，表格是列和行的集合。该行包含我们希望使用的数据或信息，例如城市名称或降雨量。这些列描述了它们存储的数据。
 
 <!-- Let's begin our exploration by starting a table to store information about cities. We might start with their name and country. You could store this in a table as follows: -->
-让我们通过创建一个表来存储有关城市的信息来开始我们的探索。我们可以从他们的名字和国家开始。您可以将其存储在表中，如下所示：
+创建一个表来存储有关城市的信息,可以从它们的名字和国家开始,如下所示：
 
 | City     | Country       |
 | -------- | ------------- |
-| Tokyo    | Japan         |
+| Beijing    | China         |
 | Atlanta  | United States |
 | Auckland | New Zealand   |
 
 <!-- Notice the column names of **city**, **country** and **population** describe the data being stored, and each row has information about one city. -->
-请注意，城市、国家和人口的列名描述了存储的数据，每一行都有一个城市的信息。
+城市、国家和人口的列名描述了存储的数据，每一行都有一个城市的信息。
 
-## The shortcomings of a single table approach
+## 单表格的缺点 
+<!-- ## The shortcomings of a single table approach -->
 
 <!-- Chances are, the table above seems relatively familiar to you. Let's start to add some additional data to our burgeoning database - annual rainfall (in millimeters). We'll focus on the years 2018, 2019 and 2020. If we were to add it for Tokyo, it might look something like this: -->
-您可能对上表比较熟悉。让我们开始向我们不断发展的数据库添加一些额外的数据 - 年降雨量（以毫米为单位）。我们将重点关注 2018 年、2019 年和 2020 年。如果我们为东京添加它，它可能看起来像这样：
+向以上数据库添加一些额外的数据 - 年降雨量（以毫米为单位）。重点关注 2018 年、2019 年和 2020 年：
 
 | City  | Country | Year | Amount |
 | ----- | ------- | ---- | ------ |
-| Tokyo | Japan   | 2020 | 1690   |
-| Tokyo | Japan   | 2019 | 1874   |
-| Tokyo | Japan   | 2018 | 1445   |
+| Beijing | China   | 2020 | 1690   |
+| Beijing | China   | 2019 | 1874   |
+| Beijing | China   | 2018 | 1445   |
 
 <!-- What do you notice about our table? You might notice we're duplicating the name and country of the city over and over. That could take up quite a bit of storage, and is largely unnecessary to have multiple copies of. After all, Tokyo has just the one name we're interested in. -->
-您可能会注意到我们的表格一遍又一遍地重复城市的名称和国家/地区。这可能会占用相当多的存储空间，并且基本上没有必要拥有多个副本。毕竟，东京只有一个我们感兴趣的名字。
+可以发现表格一遍又一遍地重复城市的名称和国家/地区，这可能会占用相当多的存储空间，并且基本上没有必要拥有多个副本。
 
 <!-- OK, let's try something else. Let's add new columns for each year: -->
-让我们为每年添加新列：
+可以考虑为每年添加新列：
 
 | City     | Country       | 2018 | 2019 | 2020 |
 | -------- | ------------- | ---- | ---- | ---- |
-| Tokyo    | Japan         | 1445 | 1874 | 1690 |
+| Beijing    | China         | 1445 | 1874 | 1690 |
 | Atlanta  | United States | 1779 | 1111 | 1683 |
 | Auckland | New Zealand   | 1386 | 942  | 1176 |
 
 <!-- While this avoids the row duplication, it adds a couple of other challenges. We would need to modify the structure of our table each time there's a new year. Additionally, as our data grows having our years as columns will make it trickier to retrieve and calculate values. -->
-虽然这避免了行重复，但它增加了一些其他挑战。每次新的一年到来时，我们都需要修改表的结构。此外，随着数据的增长，列的年数将使检索和计算值变得更加困难。
+虽然这避免了行重复，但它增加了一些其他挑战。每次新的一年到来时，都需要修改表的结构。此外，随着数据的增长，列的年数将使检索和计算值变得更加困难。
 
 <!-- This is why we need multiple tables and relationships. By breaking apart our data we can avoid duplication and have more flexibility in how we work with our data. -->
 这就是为什么我们需要多个表和关系。通过分解数据，我们可以避免重复，并在处理数据的方式上拥有更大的灵活性。
 
-## The concepts of relationships
+<!-- ## The concepts of relationships -->
+## 关系的概念
 
 <!-- Let's return to our data and determine how we want to split things up. We know we want to store the name and country for our cities, so this will probably work best in one table. -->
 让我们回到我们的数据并确定我们想要如何分割数据。我们知道我们想要存储城市的名称和国家/地区，因此这可能在一张表中效果最好。
 
 | City     | Country       |
 | -------- | ------------- |
-| Tokyo    | Japan         |
+| Beijing    | China         |
 | Atlanta  | United States |
 | Auckland | New Zealand   |
 
@@ -75,15 +79,15 @@
 
 | city_id | City     | Country       |
 | ------- | -------- | ------------- |
-| 1       | Tokyo    | Japan         |
+| 1       | Beijing    | China         |
 | 2       | Atlanta  | United States |
 | 3       | Auckland | New Zealand   |
 
 <!-- > ✅ You will notice we use the terms "id" and "primary key" interchangeably during this lesson. The concepts here apply to DataFrames, which you will explore later. DataFrames don't use the terminology of "primary key", however you will notice they behave much in the same way. -->
-> ✅ 您会注意到，在本课程中，我们交替使用术语“id”和“主键”。这里的概念适用于 DataFrame，您稍后将探讨它。DataFrame 不使用“主键”术语，但是您会注意到它们的行为方式大致相同。
+> ✅ 在本课程中，我们交替使用术语“id”和“主键”。这里的概念适用于 DataFrame，您稍后将探讨它。DataFrame 不使用“主键”术语，但是您会注意到它们的行为方式大致相同。
 
 <!-- With our cities table created, let's store the rainfall. Rather than duplicating the full information about the city, we can use the id. We should also ensure the newly created table has an *id* column as well, as all tables should have an id or primary key. -->
-创建城市表后，让我们存储降雨量。我们可以使用 id，而不是复制有关城市的完整信息。我们还应该确保新创建的表也有一个id列，因为所有表都应该有一个 id 或主键。
+创建城市表后，存储降雨量。可以使用 id，而不是复制有关城市的完整信息。还应该确保新创建的表也有一个id列，因为所有表都应该有一个 id 或主键。
 
 ### rainfall
 
@@ -100,11 +104,12 @@
 | 9           | 3       | 2020 | 1176   |
 
 <!-- Notice the **city_id** column inside the newly created **rainfall** table. This column contains values which reference the IDs in the **cities** table. In technical relational data terms, this is called a **foreign key**; it's a primary key from another table. You can just think of it as a reference or a pointer. **city_id** 1 references Tokyo. -->
-请注意新创建的降雨量表中的city_id列。此列包含引用城市表中的 ID 的值。在技​​术关系数据术语中，这称为外键；它是另一个表的主键。您可以将其视为引用或指针。city_id 1 引用东京。
+请注意新创建的降雨量表中的city_id列。此列包含引用城市表中的 ID 的值。在技​​术关系数据术语中，这称为外键；它是另一个表的主键。您可以将其视为引用或指针。city_id 1 引用Beijing。
 
 > [!NOTE] Foreign key is frequently abbreviated as FK
 
-## Retrieving the data
+<!-- ## Retrieving the data -->
+## 检索数据
 
 <!-- With our data separated into two tables, you may be wondering how we retrieve it. If we are using a relational database such as MySQL, SQL Server or Oracle, we can use a language called Structured Query Language or SQL. SQL (sometimes pronounced sequel) is a standard language used to retrieve and modify data in a relational database. -->
 由于我们的数据分为两个表，您可能想知道我们如何检索它。如果我们使用 MySQL、SQL Server 或 Oracle 等关系数据库，我们可以使用一种称为结构化查询语言或 SQL 的语言。SQL（有时发音为sequel）是一种用于检索和修改关系数据库中的数据的标准语言。
@@ -117,7 +122,7 @@ SELECT city
 FROM cities;
 
 -- Output:
--- Tokyo
+-- Beijing
 -- Atlanta
 -- Auckland
 ```
@@ -182,28 +187,30 @@ WHERE rainfall.year = 2019
 -- Auckland |  942
 ```
 
-## Summary
+<!-- ## Summary -->
+## 总结
 
 <!-- Relational databases are centered around dividing information between multiple tables which is then brought back together for display and analysis. This provides a high degree of flexibility to perform calculations and otherwise manipulate data. You have seen the core concepts of a relational database, and how to perform a join between two tables. -->
 关系数据库的核心是在多个表之间划分信息，然后将这些信息重新组合在一起进行显示和分析。这为执行计算和以其他方式操作数据提供了高度的灵活性。您已经了解了关系数据库的核心概念，以及如何在两个表之间执行联接。
 
-## 🚀 Challenge
+<!-- ## 🚀 Challenge
 
 <!-- There are numerous relational databases available on the internet. You can explore the data by using the skills you've learned above. -->
 互联网上有许多可用的关系数据库。您可以使用上面学到的技能来探索数据。
 
-## Post-Lecture Quiz
+<!-- ## Post-Lecture Quiz
 
 ## [Post-lecture quiz](https://purple-hill-04aebfb03.1.azurestaticapps.net/quiz/9)
 
-## Review & Self Study
+## Review & Self Study -->
 
-There are several resources available on [Microsoft Learn](https://docs.microsoft.com/learn?WT.mc_id=academic-77958-bethanycheum) for you to continue your exploration of SQL and relational database concepts
+<!-- There are several resources available on [Microsoft Learn](https://docs.microsoft.com/learn?WT.mc_id=academic-77958-bethanycheum) for you to continue your exploration of SQL and relational database concepts
 
 - [Describe concepts of relational data](https://docs.microsoft.com//learn/modules/describe-concepts-of-relational-data?WT.mc_id=academic-77958-bethanycheum)
 - [Get Started Querying with Transact-SQL](https://docs.microsoft.com//learn/paths/get-started-querying-with-transact-sql?WT.mc_id=academic-77958-bethanycheum) (Transact-SQL is a version of SQL)
-- [SQL content on Microsoft Learn](https://docs.microsoft.com/learn/browse/?products=azure-sql-database%2Csql-server&expanded=azure&WT.mc_id=academic-77958-bethanycheum)
+- [SQL content on Microsoft Learn](https://docs.microsoft.com/learn/browse/?products=azure-sql-database%2Csql-server&expanded=azure&WT.mc_id=academic-77958-bethanycheum) --> -->
 
-## Assignment
+<!-- ## Assignment -->
+## 作业
 
-[Assignment Title](assignment.md)
+[关系型数据库数据读取操作](assignment.md)
